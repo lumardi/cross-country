@@ -42,7 +42,7 @@ rm(pkgs, installIfNot)
 
 
 # Cross Country (our data)
-cross_country <- read_csv("./cross-country/cross-country2.csv")
+cross_country <- read_csv("./cross-country2.csv")
 
 # Quality of Government dataset 
 
@@ -52,7 +52,7 @@ cross_country <- read_csv("./cross-country/cross-country2.csv")
 #2.18 Religion: arda_chprtpct
 #2.2 Civil Society: bti_eo, wdi_pop*, polity
 
-qog_standard <- read_csv("./cross-country/qog_std_cs_jan20.csv") %>%
+qog_standard <- read_csv("./qog_std_cs_jan20.csv") %>%
   select(
     cname,
     contains("ccode"),
@@ -117,7 +117,7 @@ bla <- bla %>%
 
 write_csv(cross_country, path = "./cross-country/cross-country3.csv")
 
-
+write_csv(qog_standard, path = "qog_mod.csv")
 
 
 
