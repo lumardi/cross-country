@@ -98,15 +98,14 @@ cross_country <- cross_country %>%
 
 
 # Binding datasets 
-bla <- cross_country %>%
+cross_country <- cross_country %>%
   left_join(qog_standard, by = c("country_code" = "ccodealp")) %>%
   select(country,
          country_code,
+         contains("ccode"),
          everything())
 
 
-bla <- bla %>%
-  filter(is.na(ccode))
 
 
 #####################################################################################################
@@ -115,7 +114,7 @@ bla <- bla %>%
 #### 3. Saving Data ####
 
 
-write_csv(cross_country, path = "./cross-country/cross-country3.csv")
+write_csv(cross_country, path = "./cross-country3.csv")
 
 write_csv(qog_standard, path = "qog_mod.csv")
 
