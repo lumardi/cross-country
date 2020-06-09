@@ -213,7 +213,7 @@ write_csv(temp, path = "./US-data/US-unemployment-rate.csv")
 
 
 # Links
-links <- "https://seer.cancer.gov/popdata/yr1969_2018.19ages/us.1969_2018.19ages.adjusted.txt.gz"
+links <- "https://seer.cancer.gov/popdata/yr1969_2018.singleages/us.1969_2018.singleages.adjusted.txt.gz"
 file <- paste0(getwd(),"/US-data/temp/pop-by-char.txt.gz")
 
 
@@ -242,26 +242,26 @@ aux <- fread(input = paste0(getwd(),"/US-data/temp/pop-by-char.txt.gz"),
          race = ifelse(race == "1", "White",
                        ifelse(race == "2", "Black",
                               ifelse(race == "3", "Other", NA))),
-         age = recode(age,
-                          "00" = "0 years",
-                          "01" = "1-4 years" ,
-                          "02" = "5-9 years" ,
-                          "03" = "10-14 years" ,
-                          "04" = "15-19 years" ,
-                          "05" = "20-24 years" ,
-                          "06" = "25-29 years" ,
-                          "07" = "30-34 years" ,
-                          "08" = "35-39 years" ,
-                          "09" = "40-44 years" ,
-                          "10" = "45-49 years" ,
-                          "11" = "50-54 years" ,
-                          "12" = "55-59 years" ,
-                          "13" = "60-64 years" ,
-                          "14" = "65-69 years" ,
-                          "15" = "70-74 years" ,
-                          "16" = "75-79 years" ,
-                          "17" = "80-84 years" ,
-                          "18" = "85+ years")
+#         age = recode(age,
+#                          "00" = "0 years",
+#                          "01" = "1-4 years" ,
+#                          "02" = "5-9 years" ,
+#                          "03" = "10-14 years" ,
+#                          "04" = "15-19 years" ,
+#                          "05" = "20-24 years" ,
+#                          "06" = "25-29 years" ,
+#                          "07" = "30-34 years" ,
+#                          "08" = "35-39 years" ,
+#                          "09" = "40-44 years" ,
+#                          "10" = "45-49 years" ,
+#                          "11" = "50-54 years" ,
+#                          "12" = "55-59 years" ,
+#                          "13" = "60-64 years" ,
+#                          "14" = "65-69 years" ,
+#                          "15" = "70-74 years" ,
+#                          "16" = "75-79 years" ,
+#                          "17" = "80-84 years" ,
+#                          "18" = "85+ years")
   ) %>%
   group_by(year,state, race, gender, age) %>%
   summarise(population = sum(population, na.rm = T))
