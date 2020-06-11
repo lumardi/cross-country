@@ -14,7 +14,7 @@
 
 #### 0. House Cleaning ####
 
-set.seed(29841) # From random.org
+set.seed(7736) # From random.org
 
 
 # Needed packages
