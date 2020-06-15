@@ -7,7 +7,7 @@
 # Paper: [Title]
 # Authors: [Authors]
 # Date creation: 2020-06-08
-# Last Update: 2020-06-08
+# Last Update: 2020-06-15
 
 #####################################################################################################
 
@@ -18,7 +18,7 @@ set.seed(7736) # From random.org
 
 
 # Needed packages
-pkgs <- c("tidyverse", "data.table", "USAboundaries")
+pkgs <- c("tidyverse", "data.table", "USAboundaries", "rvest", "httr")
 
 
 # Install if not already installed
@@ -391,6 +391,104 @@ write_csv(temp, path = "./US-data/US-governors.csv")
 
 
 ################################################################################################################
+
+
+
+#### 7. Crime Statistics 1960-2018 ####
+
+# Extracted from: http://www.disastercenter.com/crime/
+# Alternative: https://www.ucrdatatool.gov/
+
+
+# Links
+links <- paste0(
+  "http://www.disastercenter.com/crime/",
+  tolower(states$state_abbr) ,
+  "crime.htm") %>%
+  enframe(name = NULL) %>%
+  filter(!grepl("dccrime",value)) %>%
+  mutate(id = 1:nrow(.),
+         value = gsub("kscrime","kncrime",value),
+         value = ifelse(id %in% c(24:27, 30:31, 33:34, 36),
+                        gsub("crime.htm", "crimn.htm", value), value)) %>% .$value
+
+
+# Scraping Data
+temp <- list()
+
+
+for(i in 1:length(links)){
+  Sys.sleep(round(rnorm(1, mean = 8, sd = 2), digits = 0))
+  
+  temp[[i]] = 
+    tryCatch({
+      read_html(links[i]) %>%
+        html_table(fill = T) %>%
+        .[[2]] %>%
+        select(1:12) %>%
+        filter(!grepl("[A-z]", X1),
+               X1 != "")  %>%
+        rename("year" = "X1",
+               "population" = "X2",
+               "index" = "X3",
+               "violent" = "X4",
+               "property" = "X5",
+               "murder" = "X6",
+               "forcible_rape" = "X7",
+               "robbery" = "X8",
+               "aggravated_assault" = "X9",
+               "burglary" = "X10",
+               "larceny_theft" = "X11",
+               "vehicle_theft" = "X12"
+        ) %>%
+        mutate_all(list(~gsub("^(([0-9]){1}.*?)", "\\1,", .))) %>%
+        mutate_all(list(~gsub(",\\.", ",", .))) %>%
+        mutate_all(list(~gsub("[^0-9\\.]", "", .))) %>%
+        mutate_all(list(as.numeric)) %>%
+        full_join(tibble(year = 1960:2018)) %>%
+        mutate(check_dupe = ifelse(year == lag(year), 1, NA)) %>%
+        filter(is.na(check_dupe)) %>%
+        mutate(state = gsub(".*crime/", "", links[i]),
+               state = toupper(gsub("crime.htm", "", state)),
+               id = 1:nrow(.),
+               type = ifelse(id < 60, "total", "per100k")
+        ) %>%
+        select(-id,-population,-check_dupe) %>%
+        pivot_wider(id_cols = c("year","state"), 
+                    names_from = type, 
+                    values_from = -c("type","year","state")) 
+    },
+    error = function(e){NA}
+    )
+}
+
+
+
+#32 - not pivoting correctly "c(xxx, yyyy)"
+
+
+
+table(is.na(temp[[40]]))
+table(is.na(temp[[3]][1]))
+
+
+
+# Data Wrangling
+temp <- temp %>%
+  reduce(bind_rows) %>%
+  mutate(state = gsub("KN", "KS", state),
+         state = str_sub(value, start =  1, end = 2))
+  
+
+# Save data
+write_csv(temp, path = "./US-data/US-crime-stats.csv")
+
+
+################################################################################################################
+
+
+
+
 
 
 #### End of File ####
