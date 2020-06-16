@@ -6,7 +6,7 @@ Cross Country and US states datasets for XXXX.
 
 Source: https://qog.pol.gu.se/
 
-Period: 
+Period: 1946-2019
 
 Observations: 
 - Does not include certain territories (see missing_countries.csv).
