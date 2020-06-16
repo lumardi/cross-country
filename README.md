@@ -1,4 +1,4 @@
-Cross Country and US states datasets for XXXX.
+Cross Country and US states datasets.
 
 # Cross Country:
 
@@ -11,10 +11,7 @@ Period: 1946-2019
 Observations: 
 - Does not include certain territories (see missing_countries.csv).
 - Variables of Interest: 
-2.10 Judicial: aii*, fh*, gcb*, iaep*, vdem*, who*, 
-2.16. Public Economy: gle_gdp, gle_rgdpc; wdi_gdpgr, wdi_gdppppcon2011, wdi_gini, pwt_rgdp
-2.18 Religion: arda_chprtpct
-2.2 Civil Society: bti_eo, wdi_pop*, polity
+2.10 Judicial: aii*, fh*, gcb*, iaep*, vdem*, who*; 2.16. Public Economy: gle_gdp, gle_rgdpc; wdi_gdpgr, wdi_gdppppcon2011, wdi_gini, pwt_rgdp; 2.18 Religion: arda_chprtpct; 2.2 Civil Society: bti_eo, wdi_pop*, polity.
 
 
 
