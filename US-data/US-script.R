@@ -21,18 +21,21 @@ set.seed(7736) # From random.org
 pkgs <- c("tidyverse", "data.table", "USAboundaries", "rvest", "httr")
 
 
-# Install if not already installed
-installIfNot <- function(x) {
+# Install and/or Update packages
+install_update <- function(x) {
   if (x %in% rownames(installed.packages()) == F) {
     install.packages(x, dependencies = T, repos = "http://cran.us.r-project.org")
   }
+  if (x %in% rownames(old.packages() == T)) {
+    update.packages(x, repos = "http://cran.us.r-project.org")
+  }
 }
 
-lapply(pkgs, installIfNot)
+lapply(pkgs, install_update)
 
 # Load packages
 lapply(pkgs, require, character.only = T)
-rm(pkgs, installIfNot)
+rm(pkgs, install_update)
 
 
 # US boundaries
@@ -45,7 +48,7 @@ states <- state_codes %>%
 
 #### 1. US Population 1900 - 2019 ####
 
-# Data Extracted from: https://fred.stlouisfed.org/release?rid=118
+# Source: https://fred.stlouisfed.org/release?rid=118
 
 # Links
 links <- paste0(
@@ -73,7 +76,6 @@ temp <- file.path(paste0(getwd(),"/US-data/temp/")) %>%
   map_df(~{
     read_csv(file = paste0(getwd(),"/US-data/temp/", .x),
              col_types = cols(.default = "c")) %>%
-    mutate_all(as.character) %>%
     rename("population" = 2,
            "date" = 1) %>%
     mutate(state = .x)
@@ -90,15 +92,15 @@ sapply(paste0(getwd(), "/US-data/temp/pop-", states$state_abbr, ".csv"), unlink)
 
 
 # Save data
-write_csv(temp, path = "./US-data/US-population.csv")
+write_csv(temp, path = "./US-data/raw/US-population.csv")
 
 
 ###############################################################################################################################################################################################################################
 
 
-#### 2. US Per Capita Personal Income 1929 - 2019 ####
+#### 2. US Per Capita Personal Income 1929-2019 ####
 
-# Data Extracted from: https://fred.stlouisfed.org/tags/series?t=annual%3Bper%20capita%3Bpersonal%3Bstate%3Busa&ob=pv&od=desc
+# Source: https://fred.stlouisfed.org/tags/series?t=annual%3Bper%20capita%3Bpersonal%3Bstate%3Busa&ob=pv&od=desc
 
 # Links
 links <- paste0(
@@ -126,7 +128,6 @@ temp <- file.path(paste0(getwd(),"/US-data/temp/")) %>%
   map_df(~{
     read_csv(file = paste0(getwd(),"/US-data/temp/", .x),
              col_types = cols(.default = "c")) %>%
-      mutate_all(as.character) %>%
       rename("pcpi" = 2,
              "date" = 1) %>%
       mutate(state = .x)
@@ -143,7 +144,7 @@ sapply(paste0(getwd(), "/US-data/temp/pcpi-", states$state_abbr, ".csv"), unlink
 
 
 # Save data
-write_csv(temp, path = "./US-data/US-per-capita-personal-income.csv")
+write_csv(temp, path = "./US-data/raw/US-per-capita-personal-income.csv")
 
 
 ###############################################################################################################################################################################################################################
@@ -151,7 +152,7 @@ write_csv(temp, path = "./US-data/US-per-capita-personal-income.csv")
 
 #### 3. US Unemployment Rate 1976-2018/2019 ####
 
-# Data Extracted from: https://fred.stlouisfed.org/searchresults/?nasw=0&st=unemployment%20rate&t=annual%3Bstate&ob=sr&od=desc&types=gen;geot
+# Source: https://fred.stlouisfed.org/searchresults/?nasw=0&st=unemployment%20rate&t=annual%3Bstate&ob=sr&od=desc&types=gen;geot
 
 # Links
 links <- paste0(
@@ -179,7 +180,6 @@ temp <- file.path(paste0(getwd(),"/US-data/temp/")) %>%
   map_df(~{
     read_csv(file = paste0(getwd(),"/US-data/temp/", .x),
              col_types = cols(.default = "c")) %>%
-      mutate_all(as.character) %>%
       rename("unemp" = 2,
              "date" = 1) %>%
       mutate(state_code = .x)
@@ -200,7 +200,7 @@ sapply(paste0(getwd(), "/US-data/temp/unemp-", states$state_code, ".csv"), unlin
 
 
 # Save data
-write_csv(temp, path = "./US-data/US-unemployment-rate.csv")
+write_csv(temp, path = "./US-data/raw/US-unemployment-rate.csv")
 
 
 ###############################################################################################################################################################################################################################
@@ -208,7 +208,7 @@ write_csv(temp, path = "./US-data/US-unemployment-rate.csv")
 
 #### 4. US Population by Characteristics (Grouped Age) 1969-2018 ####
 
-# Data Extracted from: https://seer.cancer.gov/popdata/download.html
+# Source: https://seer.cancer.gov/popdata/download.html
 
 # Links
 links <- "https://seer.cancer.gov/popdata/yr1969_2018.19ages/us.1969_2018.19ages.adjusted.txt.gz"
@@ -291,12 +291,16 @@ temp <- tibble(year = as.Date(paste0(1969:2019, "-01-01"))) %>%
 unlink(paste0(getwd(),"/US-data/temp/pop-by-char.txt.gz"))
 
 
+# Save data
+write_csv(temp, path = "./US-data/raw/US-population-by-characteristics.csv")
+
+
 ###############################################################################################################################################################################################################################
 
 
 #### 5. US Population by Characteristics (Single Ages) 1969-2018 ####
 
-# Data Extracted from: https://seer.cancer.gov/popdata/download.html
+# Source: https://seer.cancer.gov/popdata/download.html
 
 # Links
 links <- "https://seer.cancer.gov/popdata/yr1969_2018.singleages/us.1969_2018.singleages.adjusted.txt.gz"
@@ -359,7 +363,7 @@ unlink(paste0(getwd(),"/US-data/temp/pop-by-char.txt.gz"))
 
 
 # Save data
-write_csv(temp, path = "./US-data/US-population-by-characteristics-V2.csv")
+write_csv(temp, path = "./US-data/raw/US-population-by-characteristics-V2.csv")
 
 
 
@@ -368,7 +372,7 @@ write_csv(temp, path = "./US-data/US-population-by-characteristics-V2.csv")
 
 #### 6. US Governors 1775-2018 ####
 
-# Extracted from: https://www.openicpsr.org/openicpsr/project/102000/version/V1/view
+# Source: https://www.openicpsr.org/openicpsr/project/102000/version/V1/view
 # Downloaded manually
 
 # Loading Files
@@ -387,7 +391,7 @@ unlink(paste0(getwd(),"/US-data/temp/governors.csv"))
 
 
 # Save data
-write_csv(temp, path = "./US-data/US-governors.csv")
+write_csv(temp, path = "./US-data/raw/US-governors.csv")
 
 
 ################################################################################################################
@@ -396,7 +400,7 @@ write_csv(temp, path = "./US-data/US-governors.csv")
 
 #### 7. Crime Statistics 1960-2018 ####
 
-# Extracted from: http://www.disastercenter.com/crime/
+# Source: http://www.disastercenter.com/crime/
 # Alternative: https://www.ucrdatatool.gov/
 
 
@@ -442,16 +446,16 @@ for(i in 1:length(links)){
                "vehicle_theft" = "X12"
         ) %>%
         mutate_all(list(~gsub("^(([0-9]){1}.*?)", "\\1,", .))) %>%
-        mutate_all(list(~gsub(",\\.", ",", .))) %>%
-        mutate_all(list(~gsub("[^0-9\\.]", "", .))) %>%
-        mutate_all(list(as.numeric)) %>%
-        full_join(tibble(year = 1960:2018)) %>%
-        mutate(check_dupe = ifelse(year == lag(year), 1, NA)) %>%
-        filter(is.na(check_dupe)) %>%
+        mutate_all(list(~gsub(",\\.", ",", .))) %>%          # fix decimals
+        mutate_all(list(~gsub("[^0-9\\.]", "", .))) %>%      # remove non-numeric characters
+        mutate_all(list(as.numeric)) %>% 
+        mutate(check_dupe = ifelse(year == lag(year), 1, NA)) %>%  
+        filter(is.na(check_dupe)) %>%                        # remove repeated years
+        full_join(tibble(year = 1960:2018)) %>%              # include all years
         mutate(state = gsub(".*crime/", "", links[i]),
                state = toupper(gsub("crime.htm", "", state)),
                id = 1:nrow(.),
-               type = ifelse(id < 60, "total", "per100k")
+               type = ifelse(id < 60, "total", "per100k")    
         ) %>%
         select(-id,-population,-check_dupe) %>%
         pivot_wider(id_cols = c("year","state"), 
@@ -461,6 +465,44 @@ for(i in 1:length(links)){
     error = function(e){NA}
     )
 }
+
+
+i = 32
+bla = read_html(links[i]) %>%
+  html_table(fill = T) %>%
+  .[[2]] %>%
+  select(1:12) %>%
+  filter(!grepl("[A-z]", X1),
+         X1 != "")  %>%
+  rename("year" = "X1",
+         "population" = "X2",
+         "index" = "X3",
+         "violent" = "X4",
+         "property" = "X5",
+         "murder" = "X6",
+         "forcible_rape" = "X7",
+         "robbery" = "X8",
+         "aggravated_assault" = "X9",
+         "burglary" = "X10",
+         "larceny_theft" = "X11",
+         "vehicle_theft" = "X12"
+  ) %>%
+  mutate_all(list(~gsub("^(([0-9]){1}.*?)", "\\1,", .))) %>%
+  mutate_all(list(~gsub(",\\.", ",", .))) %>%          # fix decimals
+  mutate_all(list(~gsub("[^0-9\\.]", "", .))) %>%      # remove non-numeric characters
+  mutate_all(list(as.numeric)) %>% 
+  mutate(check_dupe = ifelse(year == lag(year), 1, NA)) %>%  
+  filter(is.na(check_dupe)) %>%                        # remove repeated years
+#  full_join(tibble(year = 1960:2018)) %>%              # include all years
+  mutate(state = gsub(".*crime/", "", links[i]),
+         state = toupper(gsub("crime.htm", "", state)),
+         id = 1:nrow(.),
+         type = ifelse(id < 60, "total", "per100k")    
+  ) %>%
+  select(-id,-population,-check_dupe) %>%
+  pivot_wider(id_cols = c("year","state"), 
+              names_from = type, 
+              values_from = -c("type","year","state")) 
 
 
 
@@ -481,13 +523,85 @@ temp <- temp %>%
   
 
 # Save data
-write_csv(temp, path = "./US-data/US-crime-stats.csv")
+write_csv(temp, path = "./US-data/raw/US-crime-stats.csv")
 
 
 ################################################################################################################
 
 
 
+#### 8. Police Employee Data 1960-2018 ####
+
+# Source: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs
+
+
+# Links
+links <- "http://s3-us-gov-west-1.amazonaws.com/cg-d4b776d0-d898-4153-90c8-8336f86bdfec/pe_1960_2018.csv"
+file <- paste0(getwd(),"/US-data/temp/police-employee.csv")
+
+
+# Download Files 
+download.file(links, file)
+
+
+# Loading Files & Data Wrangling
+temp <- read_csv(file = paste0(getwd(),"/US-data/temp/police-employee.csv"),
+                 col_types = cols(.default = "c")) %>%
+    rename("year" = "data_year",
+           "state" = "state_abbr") %>%
+  mutate(across(c(contains("_ct"), year), ~ as.numeric(.x))) %>%
+  group_by(year, state) %>%
+  summarise(male_officer = sum(male_officer_ct, na.rm = T),
+            male_civilian = sum(male_civilian_ct, na.rm = T),
+            female_officer = sum(female_officer_ct, na.rm = T),
+            female_civilian = sum(female_civilian_ct, na.rm = T)
+            )
+  
+
+# Delete temp data
+unlink(paste0(getwd(),"/US-data/temp/police-employee.csv"))
+
+
+# Save data
+write_csv(temp, path = "./US-data/raw/US-police-employee.csv")
+
+
+
+################################################################################################################
+
+
+
+#### 9. UCR Program Participation Data 1960-2018 ####
+
+# Source: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs
+
+
+# Links
+links <- "http://s3-us-gov-west-1.amazonaws.com/cg-d4b776d0-d898-4153-90c8-8336f86bdfec/ucr_participation_1960_2018.csv"
+file <- paste0(getwd(),"/US-data/temp/ucr_participation.csv")
+
+
+# Download Files 
+download.file(links, file)
+
+
+# Loading Files & Data Wrangling
+temp <- read_csv(file = paste0(getwd(),"/US-data/temp/ucr_participation.csv"),
+                 col_types = cols(.default = "c")) %>%
+  
+
+
+# Delete temp data
+unlink(paste0(getwd(),"/US-data/temp/ucr_participation.csv"))
+
+
+# Save data
+write_csv(temp, path = "./US-data/raw/US-police-employee.csv")
+
+
+
+
+################################################################################################################
 
 
 

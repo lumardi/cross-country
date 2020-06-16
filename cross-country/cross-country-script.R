@@ -18,21 +18,26 @@ set.seed(29841) # From random.org
 
 
 # Needed packages
-pkgs <- c("tidyverse", "countrycode")
+pkgs <- c("tidyverse", "countrycode", "data.table")
 
 
-# Install if not already installed
-installIfNot <- function(x) {
-  if (x %in% rownames(installed.packages()) == FALSE) {
+# Install and/or Update packages
+install_update <- function(x) {
+  if (x %in% rownames(installed.packages()) == F) {
     install.packages(x, dependencies = T, repos = "http://cran.us.r-project.org")
+  }
+  if (x %in% rownames(old.packages() == T)) {
+    update.packages(x, repos = "http://cran.us.r-project.org")
   }
 }
 
-lapply(pkgs, installIfNot)
+lapply(pkgs, install_update)
 
 # Load packages
 lapply(pkgs, require, character.only = T)
-rm(pkgs, installIfNot)
+rm(pkgs, install_update)
+
+
 
 
 #####################################################################################################
@@ -42,18 +47,13 @@ rm(pkgs, installIfNot)
 
 
 # Cross Country (our data)
-cross_country <- read_csv("./cross-country2.csv")
+cross_country <- read_csv("./cross-country/temp/cross-country2.csv")
 
 # Quality of Government dataset 
 
-#Variables of Interest: 
-#2.10 Judicial: aii*, fh*, gcb*, iaep*, vdem*, who*, 
-#2.16. Public Economy: gle_gdp, gle_rgdpc; wdi_gdpgr, wdi_gdppppcon2011, wdi_gini, pwt_rgdp
-#2.18 Religion: arda_chprtpct
-#2.2 Civil Society: bti_eo, wdi_pop*, polity
-
-qog_standard <- read_csv("./qog_std_cs_jan20.csv") %>%
+qog_standard <- fread("http://www.qogdata.pol.gu.se/data/qog_std_ts_jan20.csv") %>%
   select(
+    year,
     cname,
     contains("ccode"),
     contains("aii"),
@@ -74,8 +74,6 @@ qog_standard <- read_csv("./qog_std_cs_jan20.csv") %>%
     contains("polity")
   )
 
-
-#####################################################################################################
 
 
 #### 2. Data Wrangling ####
@@ -99,24 +97,15 @@ cross_country <- cross_country %>%
 
 # Binding datasets 
 cross_country <- cross_country %>%
-  left_join(qog_standard, by = c("country_code" = "ccodealp")) %>%
+  left_join(qog_standard, by = c("country_code" = "ccodealp", "year" = "year")) %>%
   select(country,
          country_code,
          contains("ccode"),
          everything())
 
 
-
-
-#####################################################################################################
-
-
 #### 3. Saving Data ####
-
-
-write_csv(cross_country, path = "./cross-country3.csv")
-
-write_csv(qog_standard, path = "qog_mod.csv")
+write_csv(cross_country, path = "./cross-country/cross-country3.csv")
 
 
 
