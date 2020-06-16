@@ -467,8 +467,9 @@ for(i in 1:length(links)){
 }
 
 
-i = 32
-bla = read_html(links[i]) %>%
+# Fixing i == 32 (NY)
+i <- 32
+temp[[i]] <- read_html(links[i]) %>%
   html_table(fill = T) %>%
   .[[2]] %>%
   select(1:12) %>%
@@ -488,38 +489,28 @@ bla = read_html(links[i]) %>%
          "vehicle_theft" = "X12"
   ) %>%
   mutate_all(list(~gsub("^(([0-9]){1}.*?)", "\\1,", .))) %>%
-  mutate_all(list(~gsub(",\\.", ",", .))) %>%          # fix decimals
-  mutate_all(list(~gsub("[^0-9\\.]", "", .))) %>%      # remove non-numeric characters
+  mutate_all(list(~gsub(",\\.", ",", .))) %>%          
+  mutate_all(list(~gsub("[^0-9\\.]", "", .))) %>%      
   mutate_all(list(as.numeric)) %>% 
   mutate(check_dupe = ifelse(year == lag(year), 1, NA)) %>%  
-  filter(is.na(check_dupe)) %>%                        # remove repeated years
-#  full_join(tibble(year = 1960:2018)) %>%              # include all years
+  filter(is.na(check_dupe)) %>%                        
   mutate(state = gsub(".*crime/", "", links[i]),
          state = toupper(gsub("crime.htm", "", state)),
          id = 1:nrow(.),
-         type = ifelse(id < 60, "total", "per100k")    
+         type = ifelse(id < 55, "total", "per100k")    
   ) %>%
   select(-id,-population,-check_dupe) %>%
   pivot_wider(id_cols = c("year","state"), 
               names_from = type, 
-              values_from = -c("type","year","state")) 
-
-
-
-#32 - not pivoting correctly "c(xxx, yyyy)"
-
-
-
-table(is.na(temp[[40]]))
-table(is.na(temp[[3]][1]))
-
+              values_from = -c("type","year","state")) %>%
+  full_join(tibble(year = 1960:2018, state = "NY"))
 
 
 # Data Wrangling
 temp <- temp %>%
-  reduce(bind_rows) %>%
+  bind_rows(temp) %>%
   mutate(state = gsub("KN", "KS", state),
-         state = str_sub(value, start =  1, end = 2))
+         state = str_sub(state, start =  1, end = 2))
   
 
 # Save data
@@ -596,7 +587,7 @@ unlink(paste0(getwd(),"/US-data/temp/ucr_participation.csv"))
 
 
 # Save data
-write_csv(temp, path = "./US-data/raw/US-police-employee.csv")
+write_csv(temp, path = "./US-data/raw/US-ucr-participation.csv")
 
 
 
