@@ -53,13 +53,19 @@ Observations: Excludes DC.
 
 Source: https://fred.stlouisfed.org/tags/series?t=annual%3Bper%20capita%3Bpersonal%3Bstate%3Busa&ob=pv&od=desc
 
+Source [2]: https://apps.bea.gov/regional/downloadzip.cfm
+
 Period: 1929-2019
 
-Observations: Not seasonally adjusted. 
+Observations: Not seasonally adjusted. Dollars (current). The income available to persons for spending or saving (personal income less personal current taxe) divided by the resident population (both civilian and military) who reside in a given area.
+
+Suggested Citation: U.S. Bureau of Economic Analysis, Per Capita Personal Income in [STATE], retrieved from FRED, Federal Reserve Bank of St. Louis; [link], June 18, 2020.
 
 ## US States Unemployment Rate
 
 Source: https://fred.stlouisfed.org/searchresults/?nasw=0&st=unemployment%20rate&t=annual%3Bstate&ob=sr&od=desc&types=gen;geot
+
+Source [2]: https://apps.bea.gov/regional/downloadzip.cfm
 
 Period: 1976-2018/2019
 
