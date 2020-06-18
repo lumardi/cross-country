@@ -71,6 +71,17 @@ Suggested Citation: U.S. Bureau of Economic Analysis, Per Capita Personal Income
 
 ## US States Unemployment Rate
 
+Source: https://fred.stlouisfed.org/release?rid=140
+
+Period: 1997-2019
+
+Observations: Millions of Chained 2012 Dollars, Not Seasonally Adjusted. 
+
+Suggested Citation: U.S. Bureau of Economic Analysis, Real Total Gross Domestic Product for [STATE], retrieved from FRED, Federal Reserve Bank of St. Louis; [LINK], June 17, 2020.
+
+
+## US States Unemployment Rate
+
 Source: https://fred.stlouisfed.org/searchresults/?nasw=0&st=unemployment%20rate&t=annual%3Bstate&ob=sr&od=desc&types=gen;geot
 
 Source [2]: https://apps.bea.gov/regional/downloadzip.cfm (not included)
@@ -80,6 +91,7 @@ Period: 1976-2018/2019
 Observations: Percent, Not seasonally adjusted. 
 
 Suggested Citation: U.S. Bureau of Labor Statistics, Unemployment Rate in [STATE], retrieved from FRED, Federal Reserve Bank of St. Louis; [LINK], June 17, 2020.
+
 
 ## US States Police Employee
 
