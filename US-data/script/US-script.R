@@ -579,7 +579,11 @@ download.file(links, file)
 # Loading Files & Data Wrangling
 temp <- read_csv(file = paste0(getwd(),"/US-data/temp/ucr_participation.csv"),
                  col_types = cols(.default = "c")) %>%
-  filter(nibrs_participating_agencies != nibrs_participating_agencies_1)
+  left_join(states) %>%
+  select(-state_name, -state_code, -jurisdiction_type) %>%
+  rename("nibrs_participating_agencies_pct" = "nibrs_participating_agencies_1",
+         "state" = "state_abbr",
+         "year" = "data_year")
   
 
 
