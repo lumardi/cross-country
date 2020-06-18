@@ -25,6 +25,8 @@ Period: 1900-2019
 
 Observations: N/A
 
+Suggested Citation:
+
 ## US States Population by Characteristics (Group Ages)
 
 Source: https://seer.cancer.gov/popdata/download.html
@@ -32,6 +34,8 @@ Source: https://seer.cancer.gov/popdata/download.html
 Period: 1969-2018
 
 Observations: Race (White, Black, Other).
+
+Suggested Citation:
 
 ## US States Population by Characteristics (Single Ages)
 
@@ -41,6 +45,8 @@ Period: 1969-2018
 
 Observations: Race (White, Black, Other).
 
+Suggested Citation:
+
 ## US States Governors
 
 Source: https://www.openicpsr.org/openicpsr/project/102000/version/V1/view
@@ -49,11 +55,13 @@ Period: 1775-2018
 
 Observations: Excludes DC. 
 
+Suggested Citation:
+
 ## US States per capita Personal Income
 
 Source: https://fred.stlouisfed.org/tags/series?t=annual%3Bper%20capita%3Bpersonal%3Bstate%3Busa&ob=pv&od=desc
 
-Source [2]: https://apps.bea.gov/regional/downloadzip.cfm
+Source [2]: https://apps.bea.gov/regional/downloadzip.cfm (not included)
 
 Period: 1929-2019
 
@@ -65,11 +73,13 @@ Suggested Citation: U.S. Bureau of Economic Analysis, Per Capita Personal Income
 
 Source: https://fred.stlouisfed.org/searchresults/?nasw=0&st=unemployment%20rate&t=annual%3Bstate&ob=sr&od=desc&types=gen;geot
 
-Source [2]: https://apps.bea.gov/regional/downloadzip.cfm
+Source [2]: https://apps.bea.gov/regional/downloadzip.cfm (not included)
 
 Period: 1976-2018/2019
 
 Observations: Percent, Not seasonally adjusted. 
+
+Suggested Citation: U.S. Bureau of Labor Statistics, Unemployment Rate in [STATE], retrieved from FRED, Federal Reserve Bank of St. Louis; [LINK], June 17, 2020.
 
 ## US States Police Employee
 
@@ -87,11 +97,16 @@ Period: 1960-2018
 
 Observations: N/A
 
+Suggested Citation:
+
 ## US States Crime Statistics
 
 Source: http://www.disastercenter.com/crime/
+
+Source [2]: https://www.policedatainitiative.org/datasets/#all (not included)
 
 Period: 1960-2018
 
 Observations: forcible_rape was changed in 2016 to include male victims. 
 
+Suggested Citation:
