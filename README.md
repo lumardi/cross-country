@@ -99,6 +99,8 @@ Period: 1960-2018
 
 Observations: N/A
 
+Suggested Citation:
+
 ## US States UCR Program Participation Data
 
 Source: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs
