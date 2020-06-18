@@ -579,6 +579,7 @@ download.file(links, file)
 # Loading Files & Data Wrangling
 temp <- read_csv(file = paste0(getwd(),"/US-data/temp/ucr_participation.csv"),
                  col_types = cols(.default = "c")) %>%
+  filter(nibrs_participating_agencies != nibrs_participating_agencies_1)
   
 
 
