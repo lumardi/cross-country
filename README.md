@@ -97,7 +97,7 @@ Source: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs
 
 Period: 1960-2018
 
-Observations: N/A
+Observations: Whenever all variables were equal to 0 we opted to changed them to NA.
 
 Suggested Citation:
 
