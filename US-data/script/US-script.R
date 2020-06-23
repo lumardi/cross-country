@@ -61,7 +61,7 @@ links <- paste0(
   "&nd=1900-01-01"
   )
 
-file <- paste0(getwd(),"/US-data/temp/pop-",states,".csv")
+file <- paste0(getwd(),"/US-data/temp/pop-",states$state_abbr,".csv")
 
 
 # Download Files 
@@ -84,6 +84,7 @@ temp <- file.path(paste0(getwd(),"/US-data/temp/")) %>%
     state = gsub("pop-", "", state),
     state = gsub("\\..*", "", state),
     date = as.Date(date),
+    population = gsub("\\.", "", population),
     population = as.numeric(population)
          )
 
@@ -129,13 +130,13 @@ temp <- file.path(paste0(getwd(),"/US-data/temp/")) %>%
     read_csv(file = paste0(getwd(),"/US-data/temp/", .x),
              col_types = cols(.default = "c")) %>%
       rename("pcpi" = 2,
-             "date" = 1) %>%
+             "year" = 1) %>%
       mutate(state = .x)
   }) %>%
   mutate(
     state = gsub("pcpi-", "", state),
     state = gsub("\\..*", "", state),
-    date = as.Date(date),
+    year = as.Date(year),
     pcpi = as.numeric(pcpi)
     )
 
@@ -181,17 +182,17 @@ temp <- file.path(paste0(getwd(),"/US-data/temp/")) %>%
     read_csv(file = paste0(getwd(),"/US-data/temp/", .x),
              col_types = cols(.default = "c")) %>%
       rename("unemp" = 2,
-             "date" = 1) %>%
+             "year" = 1) %>%
       mutate(state_code = .x)
   }) %>%
   mutate(
     state_code = gsub("unemp-", "", state_code),
     state_code = gsub("\\..*", "", state_code),
-    date = as.Date(date),
+    year = as.Date(year),
     unemp = (as.numeric(unemp))/100
     ) %>%
   left_join(states) %>%
-  select(date, unemp, state_abbr) %>%
+  select(year, unemp, state_abbr) %>%
   rename("state" = "state_abbr")
   
 
@@ -383,7 +384,8 @@ temp <- temp %>%
   mutate(year = as.Date(paste0(year, "-01-01"))) %>%
   left_join(., states, by = c("state" = "state_name")) %>%
   filter(!is.na(state_abbr)) %>%
-  select(year, state_abbr, governor, party)
+  select(year, state_abbr, governor, party) %>%
+  rename("state" = "state_abbr")
 
 
 # Delete temp data
@@ -510,7 +512,9 @@ temp[[i]] <- read_html(links[i]) %>%
 temp <- temp %>%
   bind_rows(temp) %>%
   mutate(state = gsub("KN", "KS", state),
-         state = str_sub(state, start =  1, end = 2))
+         state = str_sub(state, start =  1, end = 2),
+         year = as.Date(paste0(year, "-01-01"))
+         )
   
 
 # Save data
@@ -540,13 +544,24 @@ temp <- read_csv(file = paste0(getwd(),"/US-data/temp/police-employee.csv"),
                  col_types = cols(.default = "c")) %>%
     rename("year" = "data_year",
            "state" = "state_abbr") %>%
-  mutate(across(c(contains("_ct"), year), ~ as.numeric(.x))) %>%
+  mutate(across(c(contains("_ct"), year), ~ as.numeric(.x)),
+         year = as.Date(paste0(year, "-01-01"))) %>%
   group_by(year, state) %>%
   summarise(male_officer = sum(male_officer_ct, na.rm = T),
             male_civilian = sum(male_civilian_ct, na.rm = T),
             female_officer = sum(female_officer_ct, na.rm = T),
             female_civilian = sum(female_civilian_ct, na.rm = T)
-            )
+            ) %>%
+  mutate_if(is.numeric, list(~ifelse(male_officer == female_officer &
+                                       male_officer == female_officer &
+                                       male_officer == male_civilian &
+                                       male_officer == female_civilian &
+                                       male_officer == 0,
+                                     NA,
+                                     .
+                                       )))
+  
+# option: changed if all vars == 0 to NA  
   
 
 # Delete temp data
@@ -583,7 +598,8 @@ temp <- read_csv(file = paste0(getwd(),"/US-data/temp/ucr_participation.csv"),
   select(-state_name, -state_code, -jurisdiction_type) %>%
   rename("nibrs_participating_agencies_pct" = "nibrs_participating_agencies_1",
          "state" = "state_abbr",
-         "year" = "data_year")
+         "year" = "data_year") %>%
+  mutate(year = as.Date(paste0(year, "-01-01")))
   
 
 
