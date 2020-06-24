@@ -561,8 +561,6 @@ temp <- read_csv(file = paste0(getwd(),"/US-data/temp/police-employee.csv"),
                                      .
                                        )))
   
-# option: changed if all vars == 0 to NA  
-  
 
 # Delete temp data
 unlink(paste0(getwd(),"/US-data/temp/police-employee.csv"))

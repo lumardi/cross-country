@@ -63,7 +63,7 @@ temp <- tibble(
   left_join(., read_csv("./US-data/raw/US-per-capita-personal-income.csv"), by = c("state", "year")) %>% #ok
   left_join(., read_csv("./US-data/raw/US-unemployment-rate.csv"), by = c("state", "year")) %>% #ok
   left_join(., read_csv("./US-data/raw/US-population.csv"), by = c("state", "year")) %>% #ok
-  left_join(., read_csv("./US-data/raw/US-population-by-characteristics.csv"), by = c("state", "year")) %>%
+  left_join(., read_csv("./US-data/raw/US-population-by-characteristics.csv"), by = c("state", "year")) %>% #ok
   filter(year >= as.Date("1945-01-01"))
   
 
@@ -82,7 +82,7 @@ temp <- tibble(
 
 #### 3. Saving Data ####
 
-
+write_csv(temp, "US-combined.csv")
 
 
 ################################################################################################################
