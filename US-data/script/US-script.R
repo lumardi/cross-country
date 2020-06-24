@@ -77,13 +77,13 @@ temp <- file.path(paste0(getwd(),"/US-data/temp/")) %>%
     read_csv(file = paste0(getwd(),"/US-data/temp/", .x),
              col_types = cols(.default = "c")) %>%
     rename("population" = 2,
-           "date" = 1) %>%
+           "year" = 1) %>%
     mutate(state = .x)
     }) %>%
   mutate(
     state = gsub("pop-", "", state),
     state = gsub("\\..*", "", state),
-    date = as.Date(date),
+    year = as.Date(year),
     population = gsub("\\.", "", population),
     population = as.numeric(population)
          )
@@ -334,7 +334,7 @@ aux <- fread(input = paste0(getwd(),"/US-data/temp/pop-by-char.txt.gz"),
                        ifelse(race == "2", "Black",
                               ifelse(race == "3", "Other", NA)))) %>%
   group_by(year,state, race, gender, age) %>%
-  summarise(population = sum(population, na.rm = T))
+  summarise(population = sum(population, na.rm = T)) 
 
 
 # Data Wrangling
