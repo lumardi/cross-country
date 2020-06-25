@@ -510,7 +510,7 @@ temp[[i]] <- read_html(links[i]) %>%
 
 # Data Wrangling
 temp <- temp %>%
-  bind_rows(temp) %>%
+  reduce(bind_rows) %>%
   mutate(state = gsub("KN", "KS", state),
          state = str_sub(state, start =  1, end = 2),
          year = as.Date(paste0(year, "-01-01"))

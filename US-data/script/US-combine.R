@@ -56,15 +56,16 @@ states <- state_codes %>%
 temp <- tibble(
   year = as.Date(rep(paste0(1700:2019,"-01-01"), times = 51)),
   state = rep(states$state_abbr, each = 320)) %>%
-  left_join(., read_csv("./US-data/raw/US-governors.csv"), by = c("state", "year")) %>% #ok
-  left_join(., read_csv("./US-data/raw/US-police-employee.csv"), by = c("state", "year")) %>% #ok
-  left_join(., read_csv("./US-data/raw/US-crime-stats.csv"), by = c("state", "year")) %>% #ok
+  left_join(., read_csv("./US-data/raw/US-governors.csv"), by = c("state", "year")) %>% #
+  left_join(., read_csv("./US-data/raw/US-police-employee.csv"), by = c("state", "year")) %>% #
+  left_join(., read_csv("./US-data/raw/US-crime-stats.csv"), by = c("state", "year")) %>%
 #  left_join(., read_csv("./US-data/raw/US-ucr-participation.csv"), by = c("state", "year")) %>% #fix states
-  left_join(., read_csv("./US-data/raw/US-per-capita-personal-income.csv"), by = c("state", "year")) %>% #ok
-  left_join(., read_csv("./US-data/raw/US-unemployment-rate.csv"), by = c("state", "year")) %>% #ok
-  left_join(., read_csv("./US-data/raw/US-population.csv"), by = c("state", "year")) %>% #ok
-  left_join(., read_csv("./US-data/raw/US-population-by-characteristics-v2.csv"), by = c("state", "year")) #ok
+  left_join(., read_csv("./US-data/raw/US-per-capita-personal-income.csv"), by = c("state", "year")) %>% #
+  left_join(., read_csv("./US-data/raw/US-unemployment-rate.csv"), by = c("state", "year")) %>% #
+  left_join(., read_csv("./US-data/raw/US-population.csv"), by = c("state", "year")) %>% #
+  left_join(., read_csv("./US-data/raw/US-population-by-characteristics-v2.csv"), by = c("state", "year")) 
   
+
 
 ################################################################################################################
 
