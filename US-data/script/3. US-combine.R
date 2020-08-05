@@ -63,7 +63,9 @@ temp <- tibble(
   left_join(., read_csv("./US-data/raw/US-per-capita-personal-income.csv"), by = c("state", "year")) %>% #
   left_join(., read_csv("./US-data/raw/US-unemployment-rate.csv"), by = c("state", "year")) %>% #
   left_join(., read_csv("./US-data/raw/US-population.csv"), by = c("state", "year")) %>% #
-  left_join(., read_csv("./US-data/raw/US-population-by-characteristics-v2.csv"), by = c("state", "year")) 
+  left_join(., read_csv("./US-data/raw/US-population-by-characteristics-v2.csv"), by = c("state", "year")) %>%
+  left_join(., read_csv("./US-data/raw/US-prison-population.csv"), by = c("state", "year"))
+  
   
 
 
@@ -74,8 +76,8 @@ temp <- tibble(
 #### 2. Data Wrangling ####
 
 temp <- temp %>%
-  filter(year >= as.Date("1945-01-01")) %>%
-  mutate(
+  filter(year >= as.Date("1945-01-01")) %>% # choose your minimum year here
+  mutate(                                   # choose how to separate age groups here
     age_00_17 = select(.,`00`:`17`) %>% rowSums(na.rm = TRUE),
     age_18_21 = select(.,`18`:`21`) %>% rowSums(na.rm = TRUE),
     age_21_30 = select(.,`21`:`30`) %>% rowSums(na.rm = TRUE),

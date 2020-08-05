@@ -149,7 +149,14 @@ aux <- prison_population %>%
 
 prison_population <- prison_population %>%
   filter(!grepl("average", year)) %>%
-  left_join(aux)
+  mutate(year = as.numeric(year)) %>%
+  left_join(aux) %>%
+  right_join(., 
+             tibble(
+               year = rep(c(1880:2016), times = 50),
+               state = rep(subset(states$state_abbr, states$state_abbr != "DC"), each = 137)
+             ))
+
 
 
 # 2.3 State Summaries 1 - OK
@@ -227,7 +234,7 @@ state_summaries_2 <- list(aux1,aux2,aux3,aux4,aux5,aux6,aux7) %>%
 
 # 2.5 State Summaries 3
 state_summaries_3 <- state_summaries_3 %>%
-  mutate(state = gsub(" \\(.*\\)","",state))
+  mutate(state = gsub(" *\\(.*\\).*", "", state))
 
 
 # 2.6 State Summaries 4
@@ -237,7 +244,24 @@ state_summaries_4 <- state_summaries_4 %>%
 )
 
 
+
 ################################################################################################################
+
+
+#### 3. Joining Files ####
+
+
+prison_pop <- list(state_summaries_1, state_summaries_2, state_summaries_3, state_summaries_4) %>%
+  reduce(~full_join(.x,.y,by="state")) %>%
+  full_join(cartel_federalism, by = "state") %>% 
+  full_join(prison_population, by = c("state","year"))
+  
+
+################################################################################################################
+
+
+#### 4. Saving File ####
+write_csv(prison_pop, "US-prison-population.csv")
 
 
 
