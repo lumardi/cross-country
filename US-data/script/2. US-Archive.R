@@ -90,6 +90,15 @@ state_summaries_3 <- openxlsx::read.xlsx("./US-data/raw/Archive/state summaries 
                                          skipEmptyCols=T)
 
 
+state_summaries_4 <- openxlsx::read.xlsx("./US-data/raw/Archive/state summaries copy.xlsx",
+                                         startRow=1,
+                                         sheet=4,
+                                         skipEmptyRows=T,
+                                         skipEmptyCols=T,
+                                         colNames = F)
+
+
+
 ################################################################################################################
 
 
@@ -97,7 +106,7 @@ state_summaries_3 <- openxlsx::read.xlsx("./US-data/raw/Archive/state summaries 
 #### 2. Data Wrangling ####
 
 
-# 2.1. Cartel Federalism
+# 2.1. Cartel Federalism - OK
 cartel_federalism <- cartel_federalism %>%
   select(-X1) %>%
   rename("state" = "X2",
@@ -111,7 +120,7 @@ cartel_federalism <- cartel_federalism %>%
              ))
 
 
-# 2.2 Prison Population
+# 2.2 Prison Population - OK
 
   # fixing column names
 st <- rep(c("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "DC"),
@@ -123,61 +132,59 @@ vars <- c("year", vars)
 
 prison_population <- prison_population %>%
   rename("year" = "X1") %>%
-  select(-`Fed:.const.prison.pop.net`, -`annual.%.change...207`)
-
-colnames(prison_population) <- vars
-
+  select(-`Fed:.const.prison.pop.net`, -`annual.%.change...207`) %>%
+  `colnames<-`(vars)
 
   # transforming to tidy data format
-
-aux <- prison_population %>%
+prison_population <- prison_population %>%
   gather(key, value, -year) %>%
   mutate(state = gsub("_.*", "", key),
          key = gsub(".*_", "", key)) %>%
   spread(key, value)
 
-#aux <- aux %>%
-#  mutate(check = ifelse(grepl("average", year), "average", "reg")) %>%
-#  gather(key,value,-state,-year) %>%
-#  spread(key, value)
+aux <- prison_population %>%
+  filter(grepl("average", year)) %>%
+  rename_with(~paste0("average1940_",.), !contains("year") & !contains("state")) %>%
+  select(-year)
 
-
+prison_population <- prison_population %>%
+  filter(!grepl("average", year)) %>%
+  left_join(aux)
 
 
 # 2.3 State Summaries 1
 
 
-# 2.4 State Summaries 2
+# 2.4 State Summaries 2 - OK 
 
-net_1940 <- state_summaries_2 %>%
+state_summaries_2 <- state_summaries_2 %>%
+  mutate_if(is.character, list(~gsub(" \\(.*\\)","",.)))
+
+aux1 <- state_summaries_2 %>%
   select(X1:X2) %>%
   rename("state" = 1,
          "1940_net" = 2) %>%
   na.omit()
 
-
-percapita_1940 <- state_summaries_2 %>%
+aux2 <- state_summaries_2 %>%
   select(X3:X4) %>%
   rename("state" = 1,
          "1940_percapita" = 2) %>%
   na.omit()
 
-
-net_2016 <- state_summaries_2 %>%
+aux3 <- state_summaries_2 %>%
   select(X5:X6) %>%
   rename("state" = 1,
-         "1940_percapita" = 2) %>%
+         "2016_net" = 2) %>%
   na.omit()
 
-
-percapita_2016 <- state_summaries_2 %>%
+aux4 <- state_summaries_2 %>%
   select(X7:X8) %>%
   rename("state" = 1,
-         "1940_percapita" = 2) %>%
+         "2016_percapita" = 2) %>%
   na.omit()
 
-
-highest_change <- state_summaries_2 %>%
+aux5 <- state_summaries_2 %>%
   select(X9:X11) %>%
   rename("state" = 1,
          "year_highest_pct_chance" = 2,
@@ -185,18 +192,32 @@ highest_change <- state_summaries_2 %>%
          ) %>%
   na.omit()
 
-
-avg_net <- state_summaries_2 %>%
+aux6 <- state_summaries_2 %>%
   select(X12:X13) %>%
   rename("state" = 1,
-         "1940_percapita" = 2) %>%
+         "annual_avg_net" = 2) %>%
   na.omit()
 
+aux7 <- state_summaries_2 %>%
+  select(X14:X15) %>%
+  rename("state" = 1,
+         "annual_avg_net_change" = 2) %>%
+  na.omit()
+
+state_summaries_2 <- list(aux1,aux2,aux3,aux4,aux5,aux6,aux7) %>%
+  reduce(~full_join(.x,.y, by = "state"))
 
 
 # 2.5 State Summaries 3
+state_summaries_3 <- state_summaries_3 %>%
+  mutate(state = gsub(" \\(.*\\)","",state))
 
 
+# 2.6 State Summaries 4
+state_summaries_4 <- state_summaries_4 %>%
+  rename("state" = 1,
+#         "XXXX" = 2
+)
 
 
 ################################################################################################################
