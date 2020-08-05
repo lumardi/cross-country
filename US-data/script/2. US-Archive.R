@@ -152,7 +152,24 @@ prison_population <- prison_population %>%
   left_join(aux)
 
 
-# 2.3 State Summaries 1
+# 2.3 State Summaries 1 - OK
+state_summaries_1 <- state_summaries_1 %>%
+  `colnames<-`(c("state",
+                 "oldest_year", "oldest_pop",
+                 "most_recent_year", "most_recent_pop",
+                 "annual_avg_pop",
+                 "max_pop_year","max_pop",
+                 "min_pop_year", "min_pop",
+                 "max_annual_pctg_change_year","max_annual_pctg_change_pop",
+                 "min_annual_pctg_change_year","min_annual_pctg_change_pop",
+                 "avg_pctg_change_pop",
+                 "oldest_per_capita_year", "oldest_per_capita_pop",
+                 "most_recent_per_capita_year", "most_recent_per_capita_pop",
+                 "min_per_capita_year", "min_per_capita_pop",
+                 "max_per_capita_year", "max_per_capita_pop",
+                 "avg_per_capita_pop"
+                 )) %>%
+  mutate(state = gsub(" *\\(.*\\).*", "", state))
 
 
 # 2.4 State Summaries 2 - OK 
