@@ -83,11 +83,14 @@ state_summaries_2 <- openxlsx::read.xlsx("./US-data/raw/Archive/state summaries 
                                          colNames=F)
 
 
-state_summaries_3 <- openxlsx::read.xlsx("./US-data/raw/Archive/state summaries copy.xlsx",
-                                         startRow=2,
-                                         sheet=3,
-                                         skipEmptyRows=T,
-                                         skipEmptyCols=T)
+state_summaries_3 <- as_tibble(
+  openxlsx::read.xlsx("./US-data/raw/Archive/state summaries copy.xlsx",
+                      startRow=2,
+                      sheet=3,
+                      skipEmptyRows=T,
+                      skipEmptyCols=T),
+  .name_repair = "unique")
+  
 
 
 state_summaries_4 <- openxlsx::read.xlsx("./US-data/raw/Archive/state summaries copy.xlsx",
@@ -106,7 +109,7 @@ state_summaries_4 <- openxlsx::read.xlsx("./US-data/raw/Archive/state summaries 
 #### 2. Data Wrangling ####
 
 
-# 2.1. Cartel Federalism - OK
+# 2.1. Cartel Federalism
 cartel_federalism <- cartel_federalism %>%
   select(-X1) %>%
   rename("state" = "X2",
@@ -120,7 +123,10 @@ cartel_federalism <- cartel_federalism %>%
              ))
 
 
-# 2.2 Prison Population - OK
+# 2.2 Prison Population
+
+
+#.const.prison.pop.net -- FIX
 
   # fixing column names
 st <- rep(c("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "DC"),
@@ -159,7 +165,7 @@ prison_population <- prison_population %>%
 
 
 
-# 2.3 State Summaries 1 - OK
+# 2.3 State Summaries 1
 state_summaries_1 <- state_summaries_1 %>%
   `colnames<-`(c("state",
                  "oldest_year", "oldest_pop",
@@ -179,7 +185,7 @@ state_summaries_1 <- state_summaries_1 %>%
   mutate(state = gsub(" *\\(.*\\).*", "", state))
 
 
-# 2.4 State Summaries 2 - OK 
+# 2.4 State Summaries 2 
 
 state_summaries_2 <- state_summaries_2 %>%
   mutate_if(is.character, list(~gsub(" \\(.*\\)","",.)))
@@ -211,7 +217,7 @@ aux4 <- state_summaries_2 %>%
 aux5 <- state_summaries_2 %>%
   select(X9:X11) %>%
   rename("state" = 1,
-         "year_highest_pct_chance" = 2,
+         "year_highest_pctg_chance" = 2,
          "pct_change" = 3
          ) %>%
   na.omit()
@@ -234,14 +240,19 @@ state_summaries_2 <- list(aux1,aux2,aux3,aux4,aux5,aux6,aux7) %>%
 
 # 2.5 State Summaries 3
 state_summaries_3 <- state_summaries_3 %>%
-  mutate(state = gsub(" *\\(.*\\).*", "", state))
+  mutate(state = gsub(" *\\(.*\\).*", "", state)) %>%
+  rename("peak_year_net" = 2, # Identical to Sheet 1 max_pop_year
+         "peak_year_net_pop" = 3, # Identical to Sheet 1 max_pop
+         "peak_year_per_capita" = 4, # Identical to Sheet 1 max_per_capita_year
+         "peak_year_per_capita_pop" = 5, # Identical to Sheet 1 max_per_capita_pop
+         "peak_year_pctg_annual_change" = 6, # Identical to Sheet 1 max_annual_pctg_change_year
+         "peak_year_pctg_annual_change_pop" = 7) # Identical to Sheet 1 max_annual_pctg_change_pop
 
 
 # 2.6 State Summaries 4
 state_summaries_4 <- state_summaries_4 %>%
   rename("state" = 1,
-#         "XXXX" = 2
-)
+         "Sheet4_pctg" = 2)
 
 
 
@@ -254,14 +265,16 @@ state_summaries_4 <- state_summaries_4 %>%
 prison_pop <- list(state_summaries_1, state_summaries_2, state_summaries_3, state_summaries_4) %>%
   reduce(~full_join(.x,.y,by="state")) %>%
   full_join(cartel_federalism, by = "state") %>% 
-  full_join(prison_population, by = c("state","year"))
+  full_join(prison_population, by = c("state","year")) %>%
+  mutate(year = as.Date(paste0(year, "-01-01"))) %>%
+  mutate_if(is.character, list(~gsub("\\,", ";", .)))
   
 
 ################################################################################################################
 
 
 #### 4. Saving File ####
-write_csv(prison_pop, "US-prison-population.csv")
+write_csv(prison_pop, path = "./US-data/raw/US-prison-population.csv")
 
 
 

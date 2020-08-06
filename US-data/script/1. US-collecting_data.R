@@ -7,7 +7,7 @@
 # Paper: [Title]
 # Authors: [Authors]
 # Date creation: 2020-06-08
-# Last Update: 2020-06-15
+# Last Update: 2020-08-06
 
 #####################################################################################################
 
@@ -593,11 +593,13 @@ download.file(links, file)
 temp <- read_csv(file = paste0(getwd(),"/US-data/temp/ucr_participation.csv"),
                  col_types = cols(.default = "c")) %>%
   left_join(states) %>%
-  select(-state_name, -state_code, -jurisdiction_type) %>%
+  select(-state_name,
+         -state_code, -jurisdiction_type) %>%
   rename("nibrs_participating_agencies_pct" = "nibrs_participating_agencies_1",
          "state" = "state_abbr",
          "year" = "data_year") %>%
-  mutate(year = as.Date(paste0(year, "-01-01")))
+  mutate(year = as.Date(paste0(year, "-01-01"))) %>%
+  filter(!is.na(state))
   
 
 
