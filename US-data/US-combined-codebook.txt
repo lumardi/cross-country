@@ -97,7 +97,6 @@ Female - Total female population from a given U.S. state/year. Extracted from: h
 
 Male - Total male population from a given U.S. state/year. Extracted from: https://seer.cancer.gov/popdata/download.html.
 
-
 age_00_17 - Total number of residents of a given U.S. state/year aged from 00 years old to 17 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
 
 age_18_20 - Total number of residents of a given U.S. state/year aged from 18 years old to 20 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
@@ -112,159 +111,139 @@ age_51_60 - Total number of residents of a given U.S. state/year aged from 51 ye
 
 age_61_85 - Total number of residents of a given U.S. state/year aged from 61 years old to 85 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
 
-oldest_year - 
+oldest_year - Least recent year of recorded carceral population from a given U.S. state. Extracted from: 
 
-oldest_pop - 
+oldest_pop - Carceral population of the least recent year from a given U.S. state. Extracted from: 
 
-most_recent_year - 
+most_recent_year - Most recent year of recorded per capita carceral population from a given U.S. state. Extracted from: 
 
-most_recent_pop - 
+most_recent_pop - Carceral population of the most recent year from a given U.S. state. Extracted from: 
 
-annual_avg_pop - 
+annual_avg_pop - Annual average carceral population from a given U.S. state. Extracted from: 
 
-max_pop_year - 
+max_pop_year - Respective year of the maximum carceral population from a given U.S. state. Extracted from: 
 
-max_pop - 
+max_pop - Maximum carceral population from a given U.S. state. Extracted from: 
 
-min_pop_year - 
+min_pop_year - Respective year of the minimum carceral population from a given U.S. state. Extracted from:
 
-min_pop - 
+min_pop - Minimum carceral population from a given U.S. state. Extracted from: 
 
-max_annual_pctg_change_year - 
+max_annual_pctg_change_year - Respective year of the carceral population maximum percentage change from a given U.S. state. Extracted from: 
 
-max_annual_pctg_change_pop - 
+max_annual_pctg_change_pop - Carceral population maximum percentage change from a given U.S. state. Extracted from: 
 
-min_annual_pctg_change_year - 
+min_annual_pctg_change_year - Respective year of the carceral population minimum percentage change from a given U.S. state. Extracted from: 
 
-min_annual_pctg_change_pop - 
+min_annual_pctg_change_pop - Carceral population minimum percentage change from a given U.S. state. Extracted from: 
 
-avg_pctg_change_pop - 
+avg_pctg_change_pop - Carceral population average percentage change from a given U.S. state. Extracted from: 
 
-oldest_per_capita_year - 
+oldest_per_capita_year - Least recent year of recorded per capita carceral population from a given U.S. state. Extracted from: 
 
-oldest_per_capita_pop - 
+oldest_per_capita_pop - Per Capita Carceral population of the least recent year from a given U.S. state. Extracted from: 
 
-most_recent_per_capita_year - 
+most_recent_per_capita_year - Most recent year of recorded per capita carceral population from a given U.S. state. Extracted from: 
 
-most_recent_per_capita_pop - 
+most_recent_per_capita_pop - Per Capita Carceral population of the most recent year from a given U.S. state. Extracted from: 
 
-avg_pctg_change_pop - 
+min_per_capita_year - Respective year of the minimum per capita carceral population from a given U.S. state. Extracted from:
 
-oldest_per_capita_year - 
+min_per_capita_pop - Minimum per capita carceral population from a given U.S. state. Extracted from: 
 
-oldest_per_capita_pop - 
+max_per_capita_year - Respective year of the maximum per capita carceral population from a given U.S. state. Extracted from:
 
-most_recent_per_capita_year - 
 
-most_recent_per_capita_pop - 
+max_per_capita_pop - Maximum per capita carceral population from a given U.S. state. Extracted from: 
 
-min_per_capita_year - 
+avg_per_capita_pop - Average per capita carceral population from a given U.S. state. Extracted from: 
 
-min_per_capita_pop - 
+1940_net - Net carceral population from a given U.S. state in 1940. Extracted from: 
 
-max_per_capita_year - 
+1940_percapita - Per capita carceral population from a given U.S. state in 1940. Extracted from:
 
-max_per_capita_pop - 
+2016_net - Net carceral population from a given U.S. state in 2016. Extracted from: 
 
-avg_per_capita_pop - 
+2016_percapita - Per capita carceral population from a given U.S. state in 2016. Extracted from:
 
-1940_net - 
+year_highest_pctg_change - Respective year of highest percentage change of the carceral population from a given U.S. state. Extracted from: 
 
-1940_percapita - 
+pct_change - Highest percentage change of the carceral population from a given U.S. state. Extracted from: 
 
-2016_net - 
+annual_avg_net - Annual average net carceral population from a given U.S. state. Extracted from:
 
-2016_percapita - 
+annual_avg_net_change - Average carceral population annual net change from a given U.S. state. Extracted from:
 
-year_highest_pctg_change - 
+peak_year_net - Respective year of the peak net carceral population from a given U.S.. Extracted from:
 
-pct_change - 
+peak_year_net_pop - Peak net carceral population from a given U.S.. Extracted from:
 
-annual_avg_net - 
+peak_year_per_capita - Respective year of the peak per capita carceral population from a given U.S.. Extracted from:
 
-annual_avg_net_change - 
+peak_year_per_capita_pop - Peak per capita carceral population from a given U.S.. Extracted from:
 
-peak_year_net - 
+peak_year_pctg_annual_change - Respective year of the peak carceral population percentage from a given U.S.. Extracted from:
 
-peak_year_net_pop - 
-
-peak_year_per_capita - 
-
-peak_year_per_capita_pop - 
-
-peak_year_pctg_annual_change - 
-
-peak_year_pctg_annual_change_pop - 
+peak_year_pctg_annual_change_pop - Peak carceral population percentage from a given U.S.. Extracted from:
 
 Sheet4_pctg - 
 
-intergovernmental.revenue - 
+intergovernmental.revenue - Intergovernmental revenue from a given U.S. state/year. Extracted from:          
 
-Intergovernmental.Revenue.annual.%.change - 
+Intergovernmental.Revenue.annual.%.change - Intergovernmental revenue annual percentage change from a given U.S. state/year. Extracted from:          
 
 IGR.from.fed - 
 
 IGR.from.fed.annual.%.change - 
 
-total.revenue - 
-
+total.revenue - Total revenue from a given U.S. state/year. Extracted from:                 
 IGR.from.fed./.total.revenue - 
 
-IGR./.total.revenue -                                              
+IGR./.total.revenue -                       
 
-total.expenditure -                                                
+total.expenditure - Total expenditure from a given U.S. state/year. Extracted from:                                 
+total.public.safety.expenditure - Total public safety expenditure from a given U.S. state/year. Extracted from:                  
 
-total.public.safety.expenditure -                                  
+total.public.safety.expenditure./.total.expenditure - Ratio composed by the Total Public Safety Expenditures divided by the Total Expenditures from a given U.S. state/year. Extracted from:                                 
+police.protection -                        
 
-total.public.safety.expenditure./.total.expenditure -              
+Total.Corrections.Expenditures - Total Correction Expenditures from a given U.S. state/year. Extracted from:                                            
+total.corrections.expenditures./.total.expenditures - Ratio composed by the Total Correction Expenditures divided by the Total Expenditures from a given U.S. state/year. Extracted from:                          
+total.corrections.expenditures./.total.public.safety.expenditure - Ratio composed by the Total Correction Expenditures divided by the Total Public Safety Expenditures from a given U.S. state/year. Extracted from:                          
 
-police.protection -                                                
+Total.Judicial.Expenditures - Total Judicial Expenditure from a given U.S. state/year. Extracted from:                                     
 
-Total.Corrections.Expenditures -                                   
+Total.Legislative.Expenditure - Total Legislative Expenditure from a given U.S. state/year. Extracted from:                  
 
-total.corrections.expenditures./.total.expenditures -              
+general.pop - General population from a given U.S. state/year. Extracted from:                           
+pop.raw.data - Raw population from a given U.S. state/year. Extracted from: 
 
-total.corrections.expenditures./.total.public.safety.expenditure - 
+census.population - Census population from a given U.S. state/year. Extracted from:                  
+personal.income - Personal Income from a given U.S. state/year. Extracted from:                                           
+Prison.pop - Carceral population from a given U.S. state/year. Extracted from:                                              
+contrasting.sources -                       
 
-Total.Judicial.Expenditures -                                      
+Pris.pop.avg.source -                       
 
-Total.Legislative.Expenditure -                                    
+constr.Prison.pop -                        
 
-general.pop -                                                      
+const.prison.pop./.general.population -              
 
-pop.raw.data -                                                     
+(const prison pop / general pop) *100000 -           
 
-census.population - 
+annual.pct.change -                        
 
-personal.income -                                                  
+census.general.population - Census general population from a given U.S. state/year. Extracted from:                    
 
-Prison.pop -                                                       
+const.prison.pop.net - Constant carceral net population from a given U.S. state/year. Extracted from:                      
 
-contrasting.sources -                                              
+average1940_(const prison pop / general pop) *100000 -       
 
-Pris.pop.avg.source -                                              
+average1940_annual.pct.change - State carceral population average annual percentage change for the year of 1940. Extracted from:                  
 
-constr.Prison.pop -                                                
+average1940_census.general.population -  State census population average annual percentage change for the year of 1940. Extracted from:              
 
-const.prison.pop./.general.population -                            
-
-(const prison pop / general pop) *100000 -                         
-
-annual.pct.change -                                                
-
-census.general.population -                                        
-
-const.prison.pop.net -                                             
-
-average1940_(const prison pop / general pop) *100000 -             
-
-average1940_annual.pct.change -                                    
-
-average1940_census.general.population -                            
-
-average1940_const.prison.pop.net -    
-
-
+average1940_const.prison.pop.net -  State carceral population average net populationfor the year of 1940. Extracted from: 
 
 
 
