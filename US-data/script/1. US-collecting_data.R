@@ -599,7 +599,8 @@ temp <- read_csv(file = paste0(getwd(),"/US-data/temp/ucr_participation.csv"),
          "state" = "state_abbr",
          "year" = "data_year") %>%
   mutate(year = as.Date(paste0(year, "-01-01"))) %>%
-  filter(!is.na(state))
+  filter(!is.na(state)) %>%
+  select(-total_population)
   
 
 

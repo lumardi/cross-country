@@ -1,0 +1,272 @@
+###############################################################################################
+###############################################################################################
+#########################            [US  DATA CODEBOOK]            ###########################
+###############################################################################################
+###############################################################################################
+
+
+
+year - Yearly data.
+
+state - U.S. state.
+
+governor - State governor. Extracted from https://www.openicpsr.org/openicpsr/project/102000/version/V1/view.
+
+party - Governor's political party. Extracted from https://www.openicpsr.org/openicpsr/project/102000/version/V1/view.
+
+
+male_officer - Total male officer police employees from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs.
+
+male_civilian - Total male civilian police employees from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs.
+
+
+female_officer - Total female officer police employees from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs.
+
+
+female_civilian - Total female civilian police employees from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs.
+
+
+index_total - Total number of crimes from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+index_per100k - Total number of crimes from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+violent_total - Total number of violent crimes from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+violent_per100k - Total number of violent crimes from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+property_total - Total number of property crimes from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+ 
+property_per100k - Total number of property crimes from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+ 
+murder_total - Total number of homicides from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+murder_per100k - Total number of homicides from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+forcible_rape_total - Total number of forcible rape cases from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+forcible_rape_per100k - Total number of forcible rape cases from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+robbery_total - Total number of robberies from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+robbery_per100k - Total number of robberies from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+aggravated_assault_total - Total number of aggravated assault cases from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+aggravated_assault_per100k - Total number of aggravated assault cases from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+burglary_total - Total number of burglary cases from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+burglary_per100k - Total number of burglary cases from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+larceny_theft_total - Total number of larceny theft cases from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+larceny_theft_per100k - Total number of larceny theft cases from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+vehicle_theft_total - Total number of vehicle theft cases from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
+
+vehicle_theft_per100k - Total number of vehicle theft cases from a given U.S. state/year per 100,000 population. Extracted from: http://www.disastercenter.com/crime/. 
+
+total_agencies - Total number of agencies from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs. 
+
+participation_agencies - Total number of agencies from a given U.S. state/year participating in the UCR program. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs. 
+
+participating_agencies_pct - Percentage of agencies participating in the UCR program per total number of agencies from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs. 
+
+nibrs_participating_agencies - Total number of agencies from a given U.S. state/year participating in the NIBRS program. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs. 
+
+nibrs_participating_agencies_pct - Percentage of agencies participating in the NIBRS program per total number of agencies from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs. 
+
+covered_agencies - [Missing]
+
+covered_pct - [Missing]
+
+nibrs_population - Population of a given U.S. state/year covered by the NIBRS program. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs. 
+
+pcpi - Per capita Personal Income of a given U.S. state/year. Extracted from: https://fred.stlouisfed.org/tags/series?t=annual%3Bper%20capita%3Bpersonal%3Bstate%3Busa&ob=pv&od=desc. 
+
+unemp - Unemployment Rate from a given U.S. state/year. Extracted from: https://fred.stlouisfed.org/searchresults/?nasw=0&st=unemployment%20rate&t=annual%3Bstate&ob=sr&od=desc&types=gen;geot. 
+population - Population from a given U.S. state/year. Extracted from: https://fred.stlouisfed.org/release?rid=118. 
+
+Black - Total number of Black Americans from a given U.S. state/year. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+White - Total number of Whites Americans from a given U.S. state/year. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+Other - Total number of Other Ethnicities from a given U.S. state/year. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+Female - Total female population from a given U.S. state/year. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+Male - Total male population from a given U.S. state/year. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+
+age_00_17 - Total number of residents of a given U.S. state/year aged from 00 years old to 17 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+age_18_20 - Total number of residents of a given U.S. state/year aged from 18 years old to 20 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+age_21_30 - Total number of residents of a given U.S. state/year aged from 21 years old to 30 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+age_31_40 - Total number of residents of a given U.S. state/year aged from 31 years old to 40 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+age_41_50 - Total number of residents of a given U.S. state/year aged from 41 years old to 50 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+age_51_60 - Total number of residents of a given U.S. state/year aged from 51 years old to 60 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+age_61_85 - Total number of residents of a given U.S. state/year aged from 61 years old to 85 years old. Extracted from: https://seer.cancer.gov/popdata/download.html.
+
+oldest_year - 
+
+oldest_pop - 
+
+most_recent_year - 
+
+most_recent_pop - 
+
+annual_avg_pop - 
+
+max_pop_year - 
+
+max_pop - 
+
+min_pop_year - 
+
+min_pop - 
+
+max_annual_pctg_change_year - 
+
+max_annual_pctg_change_pop - 
+
+min_annual_pctg_change_year - 
+
+min_annual_pctg_change_pop - 
+
+avg_pctg_change_pop - 
+
+oldest_per_capita_year - 
+
+oldest_per_capita_pop - 
+
+most_recent_per_capita_year - 
+
+most_recent_per_capita_pop - 
+
+avg_pctg_change_pop - 
+
+oldest_per_capita_year - 
+
+oldest_per_capita_pop - 
+
+most_recent_per_capita_year - 
+
+most_recent_per_capita_pop - 
+
+min_per_capita_year - 
+
+min_per_capita_pop - 
+
+max_per_capita_year - 
+
+max_per_capita_pop - 
+
+avg_per_capita_pop - 
+
+1940_net - 
+
+1940_percapita - 
+
+2016_net - 
+
+2016_percapita - 
+
+year_highest_pctg_change - 
+
+pct_change - 
+
+annual_avg_net - 
+
+annual_avg_net_change - 
+
+peak_year_net - 
+
+peak_year_net_pop - 
+
+peak_year_per_capita - 
+
+peak_year_per_capita_pop - 
+
+peak_year_pctg_annual_change - 
+
+peak_year_pctg_annual_change_pop - 
+
+Sheet4_pctg - 
+
+intergovernmental.revenue - 
+
+Intergovernmental.Revenue.annual.%.change - 
+
+IGR.from.fed - 
+
+IGR.from.fed.annual.%.change - 
+
+total.revenue - 
+
+IGR.from.fed./.total.revenue - 
+
+IGR./.total.revenue -                                              
+
+total.expenditure -                                                
+
+total.public.safety.expenditure -                                  
+
+total.public.safety.expenditure./.total.expenditure -              
+
+police.protection -                                                
+
+Total.Corrections.Expenditures -                                   
+
+total.corrections.expenditures./.total.expenditures -              
+
+total.corrections.expenditures./.total.public.safety.expenditure - 
+
+Total.Judicial.Expenditures -                                      
+
+Total.Legislative.Expenditure -                                    
+
+general.pop -                                                      
+
+pop.raw.data -                                                     
+
+census.population - 
+
+personal.income -                                                  
+
+Prison.pop -                                                       
+
+contrasting.sources -                                              
+
+Pris.pop.avg.source -                                              
+
+constr.Prison.pop -                                                
+
+const.prison.pop./.general.population -                            
+
+(const prison pop / general pop) *100000 -                         
+
+annual.pct.change -                                                
+
+census.general.population -                                        
+
+const.prison.pop.net -                                             
+
+average1940_(const prison pop / general pop) *100000 -             
+
+average1940_annual.pct.change -                                    
+
+average1940_census.general.population -                            
+
+average1940_const.prison.pop.net -    
+
+
+
+
+
+
+

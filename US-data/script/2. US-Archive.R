@@ -217,7 +217,7 @@ aux4 <- state_summaries_2 %>%
 aux5 <- state_summaries_2 %>%
   select(X9:X11) %>%
   rename("state" = 1,
-         "year_highest_pctg_chance" = 2,
+         "year_highest_pctg_change" = 2,
          "pct_change" = 3
          ) %>%
   na.omit()

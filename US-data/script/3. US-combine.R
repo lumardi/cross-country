@@ -68,10 +68,10 @@ temp <- tibble(
                         col_types = cols(.default = "?",
                                                           "const.prison.pop./.general.population" = "n",
                                                           "max_annual_pctg_change_year" = "c",
-                                                          "year_highest_pctg_chance" = "c",
+                                                          "year_highest_pctg_change" = "c",
                                                           "peak_year_pctg_annual_change" = "c",
                                                           "max_annual_pctg_change_year" = "c",
-                                                          "year_highest_pctg_chance" = "c"
+                                                          "year_highest_pctg_change" = "c"
                                          )), by = c("state", "year"))
   
   
@@ -88,12 +88,12 @@ temp <- temp %>%
   filter(year >= as.Date("1945-01-01")) %>% # adjust minimum year here
   mutate(                                   # adjust age groups here
     age_00_17 = select(.,`00`:`17`) %>% rowSums(na.rm = T),
-    age_18_21 = select(.,`18`:`21`) %>% rowSums(na.rm = T),
-    age_21_30 = select(.,`21`:`30`) %>% rowSums(na.rm = T),
+    age_18_20 = select(.,`18`:`20`) %>% rowSums(na.rm = T),
+    age_22_30 = select(.,`21`:`30`) %>% rowSums(na.rm = T),
     age_31_40 = select(.,`31`:`40`) %>% rowSums(na.rm = T),
     age_41_50 = select(.,`41`:`50`) %>% rowSums(na.rm = T),
     age_51_60 = select(.,`51`:`60`) %>% rowSums(na.rm = T),
-    age_60_85 = select(.,`60`:`85`) %>% rowSums(na.rm = T)
+    age_61_85 = select(.,`61`:`85`) %>% rowSums(na.rm = T)
   ) %>%
   mutate(aux = select(., contains("age_")) %>% rowSums(na.rm = T)) %>%
   mutate_at(vars(contains("age_")), list(~ifelse(aux == 0, NA,.))) %>%
