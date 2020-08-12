@@ -7,40 +7,72 @@
 
 
 country - Country name.
-country_code -       
-ccode - 
-ccodealp_year -      
-ccodecow -       
-ccodewb - 
-year - Yearly data          
-tonry_frase_49     
-wpb          
-ps_44         
-ps_150         
-cdpc_27        
-un_surv_pop      
-pccp_suv_pop_2011   
-unodc_prison_pop    
+
+ccodealp - ISO 3 characters country code.
+
+ccode - QoG country code.
+
+ccodealp_year - ISO 3 characters Country Code and Year.
+
+ccodecow - Correlates of War Country code. 
+
+ccodewb - World Bank Country code.
+
+year - Yearly data.          
+
+tonry_frase_49 -
+
+wpb -
+
+ps_44 -
+
+ps_150 -
+
+cdpc_27 -
+
+un_surv_pop -
+
+pccp_suv_pop_2011 -
+
+unodc_prison_pop -
+
 unodc_prison_pop_latest
-beckley_total_prison  
-pop          
-const_low       
-const_high       
-const_avg       
-const_med       
-const_low_pop     
-const_high_pop     
-const_avg_pop     
-const_med_pop     
-const_low_chg     
-const_high_chg     
-const_avg_chg     
-const_med_chg     
-const_low_pop_chg   
-const_high_pop_chg   
-const_avg_pop_chg   
-const_med_pop_chg   
-cname         
+
+beckley_total_prison -
+
+pop -
+
+const_low -
+
+const_high -
+
+const_avg -
+
+const_med -
+
+const_low_pop -
+
+const_high_pop -
+
+const_avg_pop -
+
+const_med_pop -
+
+const_low_chg -
+
+const_high_chg -
+
+const_avg_chg -
+
+const_med_chg -
+
+const_low_pop_chg -
+
+const_high_pop_chg -
+
+const_avg_pop_chg -
+
+const_med_pop_chg -
 
 aii_acc - Accountability sub-index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
 

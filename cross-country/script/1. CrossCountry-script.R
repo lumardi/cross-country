@@ -98,9 +98,11 @@ cross_country <- cross_country %>%
 # Binding datasets 
 cross_country <- cross_country %>%
   left_join(qog_standard, by = c("country_code" = "ccodealp", "year" = "year")) %>%
+  rename("ccodealp" = "country_code") %>%
   select(country,
          country_code,
          contains("ccode"),
+         -cname,
          everything())
 
 
