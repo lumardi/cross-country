@@ -1,0 +1,450 @@
+###############################################################################################
+###############################################################################################
+############################      [CROSS COUNTRY CODEBOOK]    #################################
+###############################################################################################
+###############################################################################################
+
+
+
+country - Country name.
+country_code -       
+ccode - 
+ccodealp_year -      
+ccodecow -       
+ccodewb - 
+year - Yearly data          
+tonry_frase_49     
+wpb          
+ps_44         
+ps_150         
+cdpc_27        
+un_surv_pop      
+pccp_suv_pop_2011   
+unodc_prison_pop    
+unodc_prison_pop_latest
+beckley_total_prison  
+pop          
+const_low       
+const_high       
+const_avg       
+const_med       
+const_low_pop     
+const_high_pop     
+const_avg_pop     
+const_med_pop     
+const_low_chg     
+const_high_chg     
+const_avg_chg     
+const_med_chg     
+const_low_pop_chg   
+const_high_pop_chg   
+const_avg_pop_chg   
+const_med_pop_chg   
+cname         
+
+aii_acc - Accountability sub-index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_aio - Access to Information and Openness sub-index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.         
+
+aii_cilser - Civil Integrity sub-index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_elec - Elections sub-index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_pubm - Public Management sub-index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.        
+
+aii_q01 - Judicial Law: the independence of the judiciary is guaranteed. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q02 - Judicial Practice: the independence of the judiciary is guaranteed. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q03 - Judicial Practice: national-level judges support the independence of judiciary. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q04 - Judicial Practice: national-level judges give reasons for their decisions. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q05 - Judicial Law: there is a supreme audit institution. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q06 - Judicial Law: the independence of supreme audit institution is guaranteed. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q07 - Judicial Practice: the independence of supreme audit institution is guaranteed. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q08 - Quality of Government Practice: appointments to audit support agency's idepend. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q09 - Quality of Government Practice: the supreme audit agency releases frequent reports. 
+
+aii_q10 - Quality of Government Law: corruption is criminalized as a specific offense. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q11 - Judicial Law: there are independent bodies to investigate cases of pubsec corruption. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q12 - Judicial Practice: corruption allegations are investigated by independent body. 
+
+aii_q13 - Judicial Practice: bodies investigating pubsector corruption allegations are effective. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q14 - Quality of Government Practice: appointees to bodies investigating pubsec corruption support independ. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q15 - Judicial Law: head of state and gov. can be investigated and prosecuted while in office. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q16 - Judicial Practice: head of state and gov can be investigated and prosecuted while in office. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q17 - Judicial Law: there are mechanisms for citizens to report police force misconduct/abuse. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q18 - Judicial Practice: head of state and gov can be investigated and prosecuted while in office. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q19 - Judicial Law: independence of agencies that organize & monitor electons is guaranteed. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q20 - Quality of Government Practice: appointees to agencies organizing elections support agencies' independency. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q21 - Quality of Government Practice: agencies that organize elections are protected from pol. interference. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q22 - Quality of Government Practice: reports before after a national election are publicly available. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q23 - Media Practice: candidates/pol. parties have fair access to state-owned media outlets. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q24 - Quality of Government Law: major public procurements require competitive bidding. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q25 - Quality of Government Practice: major public procurements involve competitive bidding. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q26 - Quality of Government Practice: citizents can access results & procurement contracts related documents. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q27 - Judicial Law: companies guilty of procurement violations can't participate in future bid. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q28 - Judicial Practice: companies guilty of procurement violations can't participate in future bid. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q29 - Quality of Government Practice: citizens can access the financial records of state-owned companies. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q30 - Quality of Government Practice: citizens can access natural resources exploitation financial records. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q31 - Political System Practice: significant public expenditure receives legislative approval yearly. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q32 - Political System Law: executive's proposal & approved budget must be published in full yearly. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q33 - Political System Practice: citizens can provide input for budget decisions.  Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+
+aii_q34 - Political System Practice: a legislative committee exercises oversight of public funds. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q35 - Quality of Government Law: civil servants are required to report cases of alleged corruption. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q36 - Judicial Law: civil servants who report corruption cases are protected. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q37 - Quality of Government Law: there are formal rules to prevent conflict of interest, nepotism, etc. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q38 - Quality of Government Practice: civil servants' work is not compromised by political interference. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q39 - Quality of Government Practice: civil servants are appointed and evaluated according to prof. criteria. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q40 - Quality of Government Law: there are restrictions for civil servants after entering private sector. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q41 - Political System Law: citizens have a right to request public information from state bodies. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q42 - Quality of Government Practice: citizen requests for public information are effective. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q43 - Political System Practice: citizens can access legislative processes and documents. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q44 - Judicial Law: senior officials of government are required to disclose records of assets. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q45 - Quality of Government Practice: asset disclosure process of senior officials branches is effective. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q46 - Judicial Law: civil service members are required to disclose assets & these are public. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q47 - Quality of Government Practice: the asset disclosure process for civil service members is effective. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q48 - Judicial Law: political parties are required to disclose public donations (gov. funds). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q49 - Political Parties and Elections Practice: political parties disclose public donations & these are avaliable to public. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q50 - Political Parties and Elections Law: political parties are required to disclose private donations. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q51 - Political Parties and Elections Practice: political parties disclose private donations and this is avaliable to public. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q52 - Media Practice: media organizations disclose their owner's identities to the public. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q53 - Media Practice: journalists and editors adhere to professional practices in reporting. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q54 - Media Law: it's legal to report accurate news even if it damages pub. figures' reputation. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q55 - Media Practice: the government does not promote the media's self-censorship. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q56 - Political System Practice: government doesn't promote the self-censorship of citizens online. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q57 - Political System Practice: government doesn't block (or ask ICT firms to block) online content. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q58 - Media practice: ministries and autonomous agencies have websites. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_q59 - Media Practice: the public services regulatory agences have websites. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+aii_rol - Rule of Law sub-index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_aor - Associational and Organizational Rights. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_cl - Civil Liberties. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_ep - Electoral Process. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_feb - Freedom of Expression and Belief. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_fog - Functioning of Government. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_ipolity2 - Level of Democracy (Freedom House/Imputed Polity). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_pair - Personal Autonomy and Individual Rights. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_polity2 - Level of Democracy (Freedom House/Polity). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_ppp - Political Pluralism and Participation. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_pr - Political Rights. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_rol - Rule of Law. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fh_status - Freedom Status. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhn_fotnloc - Freedom on the Net: Limits of content. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhn_fotnota - Freedom on the Net: Obstacles to Access. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhn_fotnsc - Freedom on the Net: Score. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhn_fotnst - Freedom on the Net: Status. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhn_fotnvur - Freedom on the Net: Violation of Users's rights.Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mcei5 - Economic influences over media content (2001-2016). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mceib3 - Economic influences over Broadcast Media Content (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mceib4 - Economic influences over Broadcast Media Content (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mceip3 - Economic influences over Print Media Content (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mceip4 - Economic influences over Print Media Content (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mclr5 - Laws and regulations that influence media content *2001-2016. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mclrb3 - Laws and Regulations that Influence the Broadcast Media Content (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mclrb4 - Laws and Regulations that Influence the Broadcast Media Content (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mclrp3 - Laws and Regulations that Influence the Print Media Content (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mclrp4 -  Laws and Regulations that Influence the Print Media Content (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mcpp5 - Political pressures and controls on media content (2001-2016). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mcppb3 - Political Pressures and Controsl on Broadcast Media Content (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mcppb4 - Political Pressures and Controsl on Broadcast Media Content (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mcppp3 - Political Pressures and Controsl on Print Media Content (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_mcppp4 - Political Pressures and Controsl on Print Media Content (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_rab3 - Repressive Actions: Broadcast Media (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_rab4 - Repressive Actions: Broadcast Media (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_rap3 - Repressive Actions: Print Media (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_rap4 - Repressive Actions: Print Media (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_score3 - Freedom of the Press, Score (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_score4 - Freedom of the Press, Score (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_score5 - Freedom of the Press, Score (2001-2016). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_status2 - Freedom of the Press, Status (1988-1992). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_status3 - Freedom of the Press, Status (1993-1995). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_status4 - Freedom of the Press, Status (1996-2000). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_status5 - Freedom of the Press, Status (2001-2016). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_statusb1 - Freedom of Broadcast Media, Status (1979-1987). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+fhp_statusp1 - Freedom of Print Media, Status (1979-1987). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_bed - Paid Bribe: Education System. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_bmed - Paid Bribe: Medical Services. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_bper - Paid Bribe: Registry and permit services. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_bpol - Paid bribe: Police. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_btax - Paid Bribe: Tax Revenue. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_butil - Paid Bribe: Utilities. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_pb - Corruption Perception: Business. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_ped - Corruption Perception: Education. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_pj - Corruption Perception: Judiciary/Legal System. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_pmed - Corruption Perception: Medical Services. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_pmedia - Corruption Perception: Media. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_pmil - Corruption Perception: Military. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_pngo - Corruption Perception: NGOs. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_ppa - Corruption Perception: Political Parties. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_pparl - Corruption Perception: Parliament. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_pper - Corruption Perception: Registry and permit services. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_ppol - Corruption Perception: Police. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_prel - Corruption Perception: Religious Bodies. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_ptax - Corruption Perception: Tax Revenue. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gcb_putil - Corruption Perception: Utilities. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_corr - VDEM Political corruption Index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_delibdem - VDEM Deliberative Democracy index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_dl_delib - VDEM Deliberative Component Index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_edcomp_thick - VDEM Electoral Component Index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_egal - VDEM Egalitarian component index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_egaldem - VDEM Egalitarian democracy index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_elvotbuy - VDEM Election vote buying. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_exbribe - VDEM Executive Bribery and Corrupt Exchanges. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_excrptps - VDEM Public sector corrupt exchanges. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_execorr - VDEM corruption index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_exembez - VDEM Executive embezzlement and theft. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_exthftps - VDEM Public sector theft. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_gcrrpt - VDEM Legislature corrupt activities. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_gender - VDEM Women political empowerment index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_jucorrdc - VDEM Judicial corruption decision. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_libdem - VDEM Liberal democracy index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_liberal - VDEM Liberal component index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_mecorrpt - VDEM Media corruption. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_partip - VDEM Participatory component index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_partipdem - VDEM Participatory democracy index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_polyarchy - VDEM Electoral democracy index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+vdem_pubcorr - VDEM Public sector corruption index. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_alcohol10 - Alcohol comsumption per capita. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_dwrur - Population using at least basic drinking water servives (%), Rural. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_dwtot - Population using at least basic drinking water servives (%), Total. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_dwurb - Population using at least basic drinking water servives (%), Urban. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_halef - Healthy Life Expectancy, Female. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_halem - Healthy Life Expectancy, Male. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_halet - Healthy Life Expectancy, Total. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_homf - Homicide Rate, Female. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_homm - Homicide Rate, Male. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_homt - Homicide Rate, Total. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_infmortf - Infant Mortality Rate, Female. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_infmortm - Infant Mortality Rate, Male. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_infmortt - Infant Mortality Rate, Total. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_lef - Life Expectancy, Female. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_lem - Life Expectancy, Male. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_let - Life Expectancy, Total. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_matmort - Maternal Mortality Rate (per 100,000 live births). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_mrf - Adult Mortality Rate (per 1000 population), Female. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_mrm - Adult Mortality Rate (per 1000 population), Male. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_mrt - Adult Mortality Rate (per 1000 population), Total. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_sanitrur - Rural Population using basic sanitation services (%). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_sanittot - Total Population using basic sanitation services (%). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_saniturb - Urban Population using basic sanitation services (%). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_suif - Suicide Rate (per 100,000 population), Female. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_suim - Suicide Rate (per 100,000 population), Male. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+who_suit - Suicide Rate (per 100,000 population), Total. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gle_gdp - Real GDP (2005). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+gle_rgdpc - Real GDP per Capita (2005). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_gdpgr - GDP growth (annual %). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_gdppppcon2011 - GDP PPP (constant 2011 international dollar). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_gini - GINI index (World Bank estimate). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+pwt_rgdp - Real GDP at cosntant 2011 national prices (in mil. 2011 US Dollar). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+arda_chprtpct - Christianity: Protestants (% Adherents). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+bti_eo - Equal Opportunity. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+bti_eos - Economic Output Strength. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_pop - Population, Total. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_pop14 - Population, Ages 0-14 (% of population). Extracted from: https:/qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_pop1564 - Population, Ages 16-64 (% of population). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_pop65 - Population, Ages 65 and above (% of population). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_popbelow - Populaion living in areas where elevation below 5mts (% of total pop.). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_popden - Population density. Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_popf - Population, Female (% of total population). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_popgr - Population growth (annual %). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_poprul - Rural population (% of total population). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_poprulgr - Rural population growth (annual %). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_popurb - Urban population (% of total population). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+wdi_popurbagr - Urban population growth (annual %). Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+p_polity2 - Extracted from Quality of Government dataset. Url: https://qog.pol.gu.se/data/datadownloads/qogstandarddata.
+
+
+
+
+
+
