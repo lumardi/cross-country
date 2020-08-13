@@ -19,12 +19,9 @@ male_officer - Total male officer police employees from a given U.S. state/year.
 
 male_civilian - Total male civilian police employees from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs.
 
-
 female_officer - Total female officer police employees from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs.
 
-
 female_civilian - Total female civilian police employees from a given U.S. state/year. Extracted from: https://crime-data-explorer.fr.cloud.gov/downloads-and-docs.
-
 
 index_total - Total number of crimes from a given U.S. state/year. Extracted from: http://www.disastercenter.com/crime/. 
 
@@ -85,6 +82,7 @@ nibrs_population - Population of a given U.S. state/year covered by the NIBRS pr
 pcpi - Per capita Personal Income of a given U.S. state/year. Extracted from: https://fred.stlouisfed.org/tags/series?t=annual%3Bper%20capita%3Bpersonal%3Bstate%3Busa&ob=pv&od=desc. 
 
 unemp - Unemployment Rate from a given U.S. state/year. Extracted from: https://fred.stlouisfed.org/searchresults/?nasw=0&st=unemployment%20rate&t=annual%3Bstate&ob=sr&od=desc&types=gen;geot. 
+
 population - Population from a given U.S. state/year. Extracted from: https://fred.stlouisfed.org/release?rid=118. 
 
 Black - Total number of Black Americans from a given U.S. state/year. Extracted from: https://seer.cancer.gov/popdata/download.html.
@@ -153,7 +151,6 @@ min_per_capita_pop - Minimum per capita carceral population from a given U.S. st
 
 max_per_capita_year - Respective year of the maximum per capita carceral population from a given U.S. state. Extracted from:
 
-
 max_per_capita_pop - Maximum per capita carceral population from a given U.S. state. Extracted from: 
 
 avg_per_capita_pop - Average per capita carceral population from a given U.S. state. Extracted from: 
@@ -197,18 +194,23 @@ IGR.from.fed -
 IGR.from.fed.annual.%.change - 
 
 total.revenue - Total revenue from a given U.S. state/year. Extracted from:                 
+
 IGR.from.fed./.total.revenue - 
 
 IGR./.total.revenue -                       
 
 total.expenditure - Total expenditure from a given U.S. state/year. Extracted from:                                 
+
 total.public.safety.expenditure - Total public safety expenditure from a given U.S. state/year. Extracted from:                  
 
 total.public.safety.expenditure./.total.expenditure - Ratio composed by the Total Public Safety Expenditures divided by the Total Expenditures from a given U.S. state/year. Extracted from:                                 
+
 police.protection -                        
 
 Total.Corrections.Expenditures - Total Correction Expenditures from a given U.S. state/year. Extracted from:                                            
+
 total.corrections.expenditures./.total.expenditures - Ratio composed by the Total Correction Expenditures divided by the Total Expenditures from a given U.S. state/year. Extracted from:                          
+
 total.corrections.expenditures./.total.public.safety.expenditure - Ratio composed by the Total Correction Expenditures divided by the Total Public Safety Expenditures from a given U.S. state/year. Extracted from:                          
 
 Total.Judicial.Expenditures - Total Judicial Expenditure from a given U.S. state/year. Extracted from:                                     
@@ -216,11 +218,15 @@ Total.Judicial.Expenditures - Total Judicial Expenditure from a given U.S. state
 Total.Legislative.Expenditure - Total Legislative Expenditure from a given U.S. state/year. Extracted from:                  
 
 general.pop - General population from a given U.S. state/year. Extracted from:                           
+
 pop.raw.data - Raw population from a given U.S. state/year. Extracted from: 
 
 census.population - Census population from a given U.S. state/year. Extracted from:                  
+
 personal.income - Personal Income from a given U.S. state/year. Extracted from:                                           
+
 Prison.pop - Carceral population from a given U.S. state/year. Extracted from:                                              
+
 contrasting.sources -                       
 
 Pris.pop.avg.source -                       
@@ -244,8 +250,5 @@ average1940_annual.pct.change - State carceral population average annual percent
 average1940_census.general.population -  State census population average annual percentage change for the year of 1940. Extracted from:              
 
 average1940_const.prison.pop.net -  State carceral population average net populationfor the year of 1940. Extracted from: 
-
-
-
 
 
